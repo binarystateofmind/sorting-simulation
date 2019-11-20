@@ -11,6 +11,8 @@ import insertionsort
 import selectionsort
 import quicksort
 import mergesort
+
+import tkinter
     
 if __name__ == "__main__":
 

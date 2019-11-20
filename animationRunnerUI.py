@@ -61,11 +61,11 @@ class SortGUI:
 
         self.spin_size.grid(column=1, row=2)
 
-        self.sort_button = Button(master, text="Sort", command=self.sort)
+        self.sort_button = ttk.Button(master, text="Sort", command=self.sort)
 
         self.sort_button.grid(column=2, row=1)
 
-        self.close_button = Button(master, text="Close", command=quit)
+        self.close_button = ttk.Button(master, text="Close", command=quit)
 
         self.close_button.grid(column=2, row=2)   
 

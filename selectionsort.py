@@ -41,22 +41,6 @@ class SelectionSort:
             yield arr, next, posMin
         yield arr, None, None
 
-    def visualizeSorting(self, arr):
-        fig, axs = plt.subplots(figsize=[9,6])
-
-        axs.set_title('Selection Sort')
-        axs.set_xlim(0, len(arr))
-
-        bar = axs.bar(range(len(arr)), arr, align="edge")
-
-        def update_fig(arr):
-            for ind in range(len(arr)):
-                bar[ind].set_height(arr[ind])
-
-        visualization = animation.FuncAnimation(fig, func=update_fig, frames=self.visualSort(arr), interval=1, repeat=False) 
-
-        plt.show()
-
     def getAnimation(self, arr, fig, axs):
 
         axs.set_title('Selection Sort')

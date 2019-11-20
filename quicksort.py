@@ -68,22 +68,6 @@ class QuickSort:
         if i < right:
             yield from self.visualQuicksort(arr, i, right)
         yield arr, -1, -1, -1, -1, -1
-    
-    def visualizeSorting(self, arr):
-        fig, axs = plt.subplots(figsize=[9,6])
-
-        axs.set_title('Quick Sort')
-        axs.set_xlim(0, len(arr))
-
-        bar = axs.bar(range(len(arr)), arr, align="edge")
-
-        def update_fig(arr):
-            for ind in range(len(arr)):
-                bar[ind].set_height(arr[ind])
-
-        visualization = animation.FuncAnimation(fig, func=update_fig, frames=self.visualQuicksort(arr, 0, len(arr) - 1), interval=1, repeat=False) 
-
-        plt.show()
 
     def getAnimation(self, arr, fig, axs):
 

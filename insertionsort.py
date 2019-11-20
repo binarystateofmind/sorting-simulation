@@ -32,7 +32,7 @@ class InsertionSort:
 
         for nextPos in range(1, n):
             yield from self.visualInsert(arr, nextPos)
-        yield arr, None
+        yield arr, None, None
 
     def visualInsert(self, arr, nextPos):
         nextValue = arr[nextPos]
@@ -40,25 +40,9 @@ class InsertionSort:
         while nextPos > 0 and nextValue < arr[nextPos - 1]:
             arr[nextPos] = arr[nextPos - 1]
             nextPos = nextPos - 1
-            yield arr, nextPos
+            yield arr, nextPos, nextValue
         arr[nextPos] = nextValue
-        yield arr, nextPos
-
-    def visualizeSorting(self, arr):
-        fig, axs = plt.subplots(figsize=[9,6])
-
-        axs.set_title('Insertion Sort')
-        axs.set_xlim(0, len(arr))
-
-        bar = axs.bar(range(len(arr)), arr, align="edge")
-
-        def update_fig(arr):
-            for ind in range(len(arr)):
-                bar[ind].set_height(arr[ind])
-
-        visualization = animation.FuncAnimation(fig, func=update_fig, frames=self.visualSort(arr), interval=1, repeat=False) 
-
-        plt.show()
+        yield arr, nextPos, nextValue
 
     def getAnimation(self, arr, fig, axs):
 
@@ -72,6 +56,7 @@ class InsertionSort:
         def update_fig(yieldVal):
             arr = yieldVal[0]
             nextPos = yieldVal[1]
+            nextValue = yieldVal[2]
 
             if nextPos == None:  #at the end, set them all back to initial color
                 for ind in range(len(arr)):
@@ -80,9 +65,10 @@ class InsertionSort:
                 for ind in range(len(arr)):
                     if ind == nextPos:
                         bars[ind].set_facecolor([0,0,0])
+                        bars[ind].set_height(nextValue)
                     else:
                         bars[ind].set_facecolor(iColor)
-                    bars[ind].set_height(arr[ind])
+                        bars[ind].set_height(arr[ind])
 
         visualization = animation.FuncAnimation(fig, func=update_fig, frames=self.visualSort(arr), interval=1, repeat=False) 
 

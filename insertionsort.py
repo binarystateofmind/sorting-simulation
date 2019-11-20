@@ -6,7 +6,7 @@ class InsertionSort:
     def __init__(self):
         self.spaceUsed = 0
         self.name = "InsertionSort"
-        print("Init InsertionSort")
+        # print("Init InsertionSort")
 
     def sort(self, arr):
         n = len(arr)

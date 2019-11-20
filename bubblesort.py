@@ -6,7 +6,7 @@ class BubbleSort:
     def __init__(self):
         self.spaceUsed = 0
         self.name = "BubbleSort"
-        print("Init BubbleSort")
+        # print("Init BubbleSort")
 
     def sort(self, arr):
         n = len(arr)

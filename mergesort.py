@@ -7,7 +7,7 @@ class MergeSort:
     def __init__(self):
         self.spaceUsed = 0
         self.name = "MergeSort"
-        print("Init MergeSort")
+        # print("Init MergeSort")
 
     def sort(self, arr):
         self.spaceUsed = len(arr)

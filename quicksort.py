@@ -7,7 +7,7 @@ class QuickSort:
     def __init__(self):
         self.spaceUsed = 0
         self.name = "QuickSort"
-        print("Init QuickSort")
+        # print("Init QuickSort")
 
     def sort(self, arr):
         self.spaceUsed = len(arr)

@@ -21,8 +21,8 @@ class SortGUI:
         
         master.title("Sorting Algorithms")
 
-        w = 350
-        h = 100
+        w = 500
+        h = 150
         x = 500
         y = 100
         master.geometry('%dx%d+%d+%d' % (w, h, x, y))
